@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Card1 from './Components/Card1';
+import Axios from "axios";
+import { useState,useEffect } from 'react';
+
 
 function App() {
+  const [apidata,setapidata] = useState([]);
+
+
+      useEffect(() => {
+        Axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
+        setapidata(res.data);
+      });
+      },[]);
+   
+      
+     
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+    
+      {apidata.map((data) => (
+      <Card1 items={data}/>
+       ))}
+     {/* items2={forbtnclick} */}
+     {/* props.items.filter((item.id)=>{
+        
+      } */}
     </div>
   );
 }
