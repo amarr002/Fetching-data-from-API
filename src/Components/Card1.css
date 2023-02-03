@@ -33,6 +33,7 @@ body{
     text-align: center;
 }
 .view_detail_btn{
+       width: 130px;
        padding: 10px;
        border-radius: 30px;
        background-color: rgb(251, 62, 62);

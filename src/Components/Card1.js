@@ -4,11 +4,21 @@ import Card2 from './Card2';
 
 function Card1(props) {
   const [btnclick,setbtnclick] = useState(false)
+  const [detailval,setdetailval] = useState("View Detail")
 
   const handleclick = () => {
       setbtnclick(!btnclick)
       // props.item2={btnclick}
+      if(btnclick){
+        setdetailval("View Detail")
+      }
+      else{
+        setdetailval("Hide Detail")
+      }
+
   }
+  
+
   // const [btnval,setbtnval] = useState("")
   // const forbtnclick = (val) => {
   //   setbtnval(val)
@@ -33,7 +43,9 @@ function Card1(props) {
           <p>{props.items.address.street}</p>
         </div>
         <div className="box">
-          <button className="view_detail_btn" onClick={handleclick}>View Details</button>
+          <button className="view_detail_btn" onClick={handleclick}>
+          {detailval}
+          </button>
         </div>
         {btnclick && <Card2 items2={props.items} />  }
       </div>
