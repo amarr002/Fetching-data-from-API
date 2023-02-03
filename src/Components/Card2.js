@@ -5,7 +5,7 @@ function Card2(props) {
     <div className="main_container_card2">
     <div className='container1_card2'>
     <h2>Description</h2>
-    <p>{props.items2.catchPhrase}</p>
+    <p>{props.items2.company.catchPhrase}</p>
     </div>
     <div className='container2_card2'>
     <div className='box1_card2'>
